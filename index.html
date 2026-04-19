@@ -28,6 +28,11 @@
 
   <main>
     <section class="hero hero-home">
+      <div class="carousel">
+        <div class="carousel-slide" style="background-image: url('Image/Banner1.png');"></div>
+        <div class="carousel-slide" style="background-image: url('Image/Banner2.png');"></div>
+        <div class="carousel-slide" style="background-image: url('Image/Banner3.png');"></div>
+      </div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Traditional Spices</span>
@@ -37,25 +42,34 @@
             <a href="product.html" class="button">Explore Products</a>
             <a href="contact.html" class="button button-secondary">Contact Us</a>
           </div>
-          <div class="hero-highlights">
-            <div class="highlight-card">
-              <strong>Small Batch Freshness</strong>
-              <p>Ground daily from farm-fresh spice ingredients.</p>
-            </div>
-            <div class="highlight-card">
-              <strong>Authentic Taste</strong>
-              <p>Trusted family recipes with every pack.</p>
-            </div>
-            <div class="highlight-card">
-              <strong>Pure Ingredients</strong>
-              <p>No artificial colours, flavours, or preservatives.</p>
-            </div>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="Image/KulambuHomePage.png" alt="Dio Asalsuvai homepage image" />
+          <ul class="hero-highlights">
+            <li>Small Batch Freshness - Ground daily from farm-fresh spice ingredients.</li>
+            <li>Authentic Taste - Trusted family recipes with every pack.</li>
+            <li>Pure Ingredients - No artificial colours, flavours, or preservatives.</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.carousel-slide');
+      
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.opacity = i === index ? '1' : '0';
+        });
+      }
+      
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+      
+      showSlide(0);
+      setInterval(nextSlide, 60000);
+    </script>
+
     </section>
 
     <section class="value-strip container">
