@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dioasalsuvai | Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">DS</div>
+        <div>
+          <h1>Dioasalsuvai</h1>
+          <p>Premium spice company</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="product.html" class="nav-link">Products</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section class="contact-intro">
+      <h2>Contact Dioasalsuvai</h2>
+      <p>
+        We are happy to help with orders, inquiries, or wholesale requests.
+        Click the button below to email us directly at indraenterprises999@gmail.com.
+      </p>
+    </section>
+
+    <section class="contact-grid">
+      <div class="contact-details card">
+        <div>
+          <h3>Company Details</h3>
+          <p><strong>Dioasalsuvai</strong></p>
+          <p>Quality Spice Producers</p>
+          <p>Email: <a href="mailto:indraenterprises999@gmail.com">indraenterprises999@gmail.com</a></p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+        <div>
+          <h3>Location</h3>
+          <p>South Indian Spice House</p>
+          <p>123 Spice Lane, Madurai, Tamil Nadu</p>
+          <p>India</p>
+        </div>
+        <div>
+          <h3>Contact Person</h3>
+          <p><strong>Mr. Arun Kumar</strong></p>
+          <p>Customer Relations & Sales</p>
+          <p>Available Monday to Saturday</p>
+        </div>
+      </div>
+
+      <div class="contact-card card">
+        <h3>Send us a message</h3>
+        <p>Click the button below to open your email app and send a message to our team.</p>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <input id="contact-subject" type="text" class="form-control" value="Spice Order Inquiry" />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="5" class="form-control" placeholder="Write your message here..."></textarea>
+        </div>
+        <a id="send-email-button" class="button email-button" href="mailto:indraenterprises999@gmail.com?subject=Spice%20Order%20Inquiry">Email Indra Enterprises</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sendButton = document.getElementById('send-email-button');
+    sendButton.addEventListener('click', () => {
+      const subject = encodeURIComponent(document.getElementById('contact-subject').value.trim() || 'Spice Order Inquiry');
+      const bodyText = document.getElementById('contact-message').value.trim();
+      const body = encodeURIComponent(bodyText ? bodyText : 'Hello Dioasalsuvai,\n\nI would like to inquire about your spice products.\n\nRegards,');
+      sendButton.href = `mailto:indraenterprises999@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Dioasalsuvai. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
